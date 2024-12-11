@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="EventOrganizerSystem.Views.EventView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:EventOrganizerSystem.Views"
+             Height="600" Width="600">
+    <Grid>
+        <StackPanel Margin="20">
+            <Label Content="Event Name:" Margin="5"/>
+            <TextBox x:Name="EventName" Margin="5"/>
+
+            <Label Content="Event Date:" Margin="0,0,0,5"/>
+            <DatePicker x:Name="EventDate" Margin="5"/>
+
+            <Label Content="Event Time (HH:mm):" Margin="0,0,0,5"/>
+            <TextBox x:Name="EventTime" Margin="5" 
+                     PreviewTextInput="EventTime_PreviewTextInput"
+                     PreviewKeyDown="EventTime_PreviewKeyDown"
+                     TextChanged="EventTime_TextChanged"/>
+
+            <Button Content="Save" Click="AddEvent_Click" Margin="5"/>
+
+            <Label Content="Select Organizer:" Margin="0,10,0,5"/>
+            <ComboBox x:Name="OrganizerComboBox" Width="200" Height="30" Margin="5"/>
+
+            <Label Content="Select Venue:" Margin="0,10,0,5"/>
+            <ComboBox x:Name="VenueComboBox" Width="200" Height="30" Margin="5"/>
+
+            <ListView x:Name="EventList">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="120"/>
+                        <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date}" Width="60"/>
+                        <GridViewColumn Header="Time" DisplayMemberBinding="{Binding Time}" Width="60"/>
+                        <GridViewColumn Header="Organizer" DisplayMemberBinding="{Binding Organizer}" Width="100"/>
+                        <GridViewColumn Header="Venue" DisplayMemberBinding="{Binding Venue}" Width="120"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</UserControl>

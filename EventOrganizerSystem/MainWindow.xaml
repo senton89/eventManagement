@@ -1,0 +1,14 @@
+﻿<Window x:Class="EventOrganizerSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Event Organizer"
+        WindowState="Maximized">
+    <Grid>
+        <StackPanel>
+            <Button Content="Manage Events" Click="ManageEvents_Click"/>
+            <Button Content="Manage Organizers" Click="ManageOrganizers_Click"/>
+            <Button Content="Manage Venues" Click="ManageVenues_Click"/>
+            <ContentControl x:Name="MainContent"/>
+        </StackPanel>
+    </Grid>
+</Window>
